@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
+    android:padding="16dp"
+    tools:context="com.example.aicamtest.IntroFragment">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardIntro"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="6dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tvTeamTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="THÀNH VIÊN NHÓM"
+                android:textColor="#3F51B5"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"/>
+
+            <TextView
+                android:id="@+id/member1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1. Thành viên 1"
+                android:textSize="16sp"
+                android:textColor="#000"
+                app:layout_constraintTop_toBottomOf="@id/tvTeamTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="12dp"/>
+
+            <TextView
+                android:id="@+id/member2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2. Thành viên 2"
+                android:textSize="16sp"
+                android:textColor="#000"
+                app:layout_constraintTop_toBottomOf="@id/member1"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="4dp"/>
+
+            <TextView
+                android:id="@+id/member3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3. Thành viên 3"
+                android:textSize="16sp"
+                android:textColor="#000"
+                app:layout_constraintTop_toBottomOf="@id/member2"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="4dp"/>
+
+            <TextView
+                android:id="@+id/member4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4. Thành viên 4"
+                android:textSize="16sp"
+                android:textColor="#000"
+                app:layout_constraintTop_toBottomOf="@id/member3"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="4dp"/>
+
+            <TextView
+                android:id="@+id/member5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5. Thành viên 5"
+                android:textSize="16sp"
+                android:textColor="#000"
+                app:layout_constraintTop_toBottomOf="@id/member4"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="4dp"/>
+
+            <TextView
+                android:id="@+id/tvAppTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GIỚI THIỆU ỨNG DỤNG"
+                android:textColor="#3F51B5"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/member5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"/>
+
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Ứng dụng phân tích dinh dưỡng thực phẩm thông minh..."
+                android:textSize="16sp"
+                android:textColor="#555"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/tvAppTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="BẮT ĐẦU"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#3F51B5"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginBottom="32dp"
+        android:paddingVertical="12dp"
+        android:background="@drawable/btn_rounded"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
