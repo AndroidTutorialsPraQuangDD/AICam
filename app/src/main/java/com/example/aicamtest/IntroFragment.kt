@@ -14,22 +14,23 @@ class IntroFragment : Fragment() {
     private val binding get() = _binding!!
 
     override fun onCreateView(
-        inflater: LayoutInflater,
+        inflater: LayoutInflater, //dựng view
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle? //trạng thái phiên làm việc trước
     ): View {
         _binding = FragmentIntroBinding.inflate(inflater, container, false)
-        return binding.root
+        return binding.root //gốc của view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        // nút chuyển qua trang first
         binding.btnStart.setOnClickListener {
             findNavController().navigate(R.id.action_introFragment_to_firstFragment)
         }
     }
 
+    //destroy view và set lại binding là null để tránh dư thừa dữ liệu sau khi tắt fragment
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
