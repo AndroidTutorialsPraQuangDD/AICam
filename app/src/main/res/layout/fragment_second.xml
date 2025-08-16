@@ -1,49 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    android:background="#FFFFFF"
+    android:padding="20dp"
+    android:background="#F9F9F9"
     tools:context="com.example.aicamtest.SecondFragment">
 
-    <!-- Text hiển thị tên món ăn -->
-    <TextView
-        android:id="@+id/textFoodName"
+    <!-- Card hiển thị thông tin -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardResult"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Tên món ăn"
-        android:textSize="16sp"
-        android:textColor="@android:color/black"
-        android:layout_marginTop="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="6dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <!-- Text hiển thị kết quả calories từ AI -->
-    <TextView
-        android:id="@+id/textAiResult"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="AI dự đoán: "
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/holo_red_dark"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/textFoodName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
 
-    <!-- Image hiển thị món ăn -->
-    <ImageView
-        android:id="@+id/imageFood"
+            <!-- Tên món ăn -->
+            <TextView
+                android:id="@+id/textFoodName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tên món ăn"
+                android:textSize="18sp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:gravity="center"/>
+
+            <!-- Calories -->
+            <TextView
+                android:id="@+id/textAiResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="AI dự đoán: ..."
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/holo_red_dark"
+                android:gravity="center"
+                android:layout_marginTop="12dp"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Hình ảnh món ăn -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardImage"
         android:layout_width="0dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="16dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintTop_toBottomOf="@id/textAiResult"
+        android:layout_height="250dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="6dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/cardResult"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/imageFood"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_background"/>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
