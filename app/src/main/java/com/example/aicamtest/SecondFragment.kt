@@ -64,7 +64,7 @@ class SecondFragment : Fragment() {
         val body = MultipartBody.Part.createFormData("file", file.name, requestFile)
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://551110230407.ngrok-free.app/") // đổi theo server của bạn
+            .baseUrl("https://551110230407.ngrok-free.app/") // đổi theo server của bạn, ae lập acc ngrok xong chạy các kiểu r lấy cái link đấy thay vào đây
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
@@ -90,6 +90,8 @@ class SecondFragment : Fragment() {
             }
         })
     }
+
+
 
     override fun onDestroyView() {
         super.onDestroyView()

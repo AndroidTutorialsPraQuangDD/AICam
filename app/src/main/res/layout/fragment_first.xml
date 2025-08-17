@@ -10,7 +10,6 @@
     android:background="#F9F9F9"
     tools:context="com.example.aicamtest.FirstFragment">
 
-
     <!-- Nút Chụp ảnh -->
     <Button
         android:id="@+id/buttonCamera"
