@@ -17,11 +17,12 @@ import androidx.navigation.fragment.findNavController
 import com.example.kcalidentifier.R
 import com.example.kcalidentifier.databinding.FragmentFirstBinding
 
+// FirstFragment.kt
 class FirstFragment : Fragment() {
     private var _binding: FragmentFirstBinding? = null
     private val binding get() = _binding!!
 
-    //    2 biến để mở ảnh
+    // 2 biến để mở ảnh
     private lateinit var cameraLauncher: ActivityResultLauncher<Intent>
     private lateinit var galleryLauncher: ActivityResultLauncher<Intent>
     private var imageUri: Uri? = null
@@ -36,19 +37,21 @@ class FirstFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         // khai báo biến để mở camera
         cameraLauncher =
             registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-                if (result.resultCode == Activity.RESULT_OK) { //nếu có ảnh thì thực hiện {}
+                if (result.resultCode == Activity.RESULT_OK) {
                     imageUri?.let { uri ->
                         sendImageToSecondFragment(uri)
                     }
                 }
             }
-        // khia báo biến để mở thư viện
+
+        // khai báo biến để mở thư viện
         galleryLauncher =
             registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-                if (result.resultCode == Activity.RESULT_OK) { //nếu có ảnh thì thực hiện {}
+                if (result.resultCode == Activity.RESULT_OK) {
                     val selectedImage = result.data?.data
                     selectedImage?.let { uri ->
                         sendImageToSecondFragment(uri)
@@ -56,7 +59,8 @@ class FirstFragment : Fragment() {
                 }
             }
 
-        binding.buttonCamera.setOnClickListener { // bắt sự kiện nhấn nút camera
+        // mở camera
+        binding.buttonCamera.setOnClickListener {
             val values = ContentValues().apply {
                 put(MediaStore.Images.Media.TITLE, "New Picture")
                 put(MediaStore.Images.Media.DESCRIPTION, "From Camera")
@@ -70,24 +74,11 @@ class FirstFragment : Fragment() {
             cameraLauncher.launch(intent)
         }
 
+        // mở thư viện
         binding.buttonGallery.setOnClickListener {
             val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
             galleryLauncher.launch(intent)
         }
-
-        binding.buttonSubmit.setOnClickListener {
-            val foodName = binding.editTextFoodName.text.toString().trim()
-            if (foodName.isNotEmpty()) {
-                navigateToSecondFragment(foodName)
-            }
-        }
-    }
-
-    private fun navigateToSecondFragment(foodName: String) {
-        val bundle = Bundle().apply {
-            putString("food_name", foodName)
-        }
-        findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment, bundle)
     }
 
     private fun sendImageToSecondFragment(uri: Uri) {
