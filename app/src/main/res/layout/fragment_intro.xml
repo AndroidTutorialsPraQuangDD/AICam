@@ -5,8 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_gradient"
+    android:background="@drawable/bg_gradient_1"
     android:padding="16dp"
+    android:fontFamily="@font/poppins_medium"
     tools:context="com.example.aicamtest.IntroFragment">
 
     <androidx.cardview.widget.CardView

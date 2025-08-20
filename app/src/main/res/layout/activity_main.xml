@@ -6,6 +6,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fontFamily="@font/poppins_medium"
     tools:context="com.example.aicamtest.MainActivity">
 
     <androidx.fragment.app.FragmentContainerView
