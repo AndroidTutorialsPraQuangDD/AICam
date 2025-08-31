@@ -21,6 +21,7 @@ import com.example.aicamtest.api.CalorieApi
 import com.example.aicamtest.api.CalorieResponse
 import java.io.File
 import java.io.FileOutputStream
+import kotlin.math.round
 
 class SecondFragment : Fragment() {
     private var _binding: FragmentSecondBinding? = null
@@ -64,7 +65,7 @@ class SecondFragment : Fragment() {
         val body = MultipartBody.Part.createFormData("file", file.name, requestFile)
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://551110230407.ngrok-free.app/") // đổi theo server của bạn, ae lập acc ngrok xong chạy các kiểu r lấy cái link đấy thay vào đây
+            .baseUrl(" https://29bed9d202b1.ngrok-free.app")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
@@ -77,8 +78,9 @@ class SecondFragment : Fragment() {
                 if (response.isSuccessful) {
                     val result = response.body()
                     result?.let {
-                        binding.textAiResult.text =
-                            "Dự đoán calories: ${it.predicted_calories} kcal"
+                        // Làm tròn giá trị predicted_calories
+                        val roundedCalories = round(it.predicted_calories).toInt()
+                        binding.textAiResult.text = "Dự đoán calories: $roundedCalories kcal"
                     }
                 } else {
                     binding.textAiResult.text = "Lỗi response: ${response.code()}"

@@ -31,17 +31,6 @@
             android:orientation="vertical"
             android:padding="20dp">
 
-            <!-- Tên món ăn -->
-            <TextView
-                android:id="@+id/textFoodName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Tên món ăn"
-                android:textSize="22sp"
-                android:textColor="@android:color/black"
-                android:textStyle="bold"
-                android:gravity="center"/>
-
             <!-- Kết quả AI -->
             <TextView
                 android:id="@+id/textAiResult"
