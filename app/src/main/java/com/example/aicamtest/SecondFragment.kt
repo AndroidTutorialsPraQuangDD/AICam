@@ -65,7 +65,7 @@ class SecondFragment : Fragment() {
         val body = MultipartBody.Part.createFormData("file", file.name, requestFile)
 
         val retrofit = Retrofit.Builder()
-            .baseUrl(" https://29bed9d202b1.ngrok-free.app")
+            .baseUrl("https://ced6f276a6f9.ngrok-free.app")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
